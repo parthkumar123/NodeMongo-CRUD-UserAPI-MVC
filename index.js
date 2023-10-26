@@ -24,7 +24,7 @@ connectMongoDB(process.env.MONGO_URI);
 // Routes.
 const userRouter = require("./routes/user");
 
-app.use("/user", userRouter);
+app.use("/users", userRouter);
 
 // Start the server.
 app.listen(port, () => {
