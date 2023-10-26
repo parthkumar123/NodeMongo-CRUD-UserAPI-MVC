@@ -5,13 +5,18 @@ const router = express.Router();
 const {
     handleGetAllUsers,
     handleGetUserById,
-    handleCreateNewUser
+    handleCreateNewUser,
+    handleDeleteUserById,
+    handleUpdateUserById
 } = require("../controllers/user");
 
 router.route("/")
     .get(handleGetAllUsers)
     .post(handleCreateNewUser);
 
-router.get("/:id", handleGetUserById);
+router.route("/:id")
+    .get(handleGetUserById)
+    .delete(handleDeleteUserById)
+    .patch(handleUpdateUserById);
 
 module.exports = router;
