@@ -2,6 +2,7 @@
 // Require the necessary modules.
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser');
 
 // Dynamic port binding.
 const path = require("path");
@@ -13,6 +14,12 @@ const port = process.env.PORT;
 
 // Middleware configuration.
 app.use(express.urlencoded({ extended: false }));
+// Parse JSON bodies (as sent by API clients).
+app.use(bodyParser.json());
+
+// MongoDB connection.
+const connectMongoDB = require("./connection");
+connectMongoDB(process.env.MONGO_URI);
 
 // Routes.
 const userRouter = require("./routes/user");
