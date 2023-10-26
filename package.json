@@ -1,0 +1,18 @@
+{
+  "name": "mvc-node",
+  "version": "1.0.0",
+  "description": "Sample Crud API Using MVC architecture.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development&&nodemon index.js"
+  },
+  "author": "Parth Shiyani",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.3",
+    "nodemon": "^3.0.1",
+    "path": "^0.12.7"
+  }
+}
